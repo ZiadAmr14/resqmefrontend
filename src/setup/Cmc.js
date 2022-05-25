@@ -105,7 +105,7 @@ const Cmc = () => {
               <td><select name='status' onChange={(e) =>setCmcStatus(e.target.value)}>
                 <option value="Pending">Pending</option>
                 <option value="Approved">Approved</option>
-                <option value="Rejected">Rejected</option>
+                <option value="Refused">Refused</option>
               </select></td>
             </tr>
           </tbody>

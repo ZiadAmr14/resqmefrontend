@@ -104,7 +104,7 @@ const Car = () => {
               <td><select name='status' onChange={(e) =>setCarStatus(e.target.value)}>
                 <option value="Pending">Pending</option>
                 <option value="Approved">Approved</option>
-                <option value="Rejected">Rejected</option>
+                <option value="Refused">Refuced</option>
               </select></td>
             </tr> 
           </tbody>
