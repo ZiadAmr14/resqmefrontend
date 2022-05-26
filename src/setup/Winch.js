@@ -6,7 +6,7 @@ import axios from 'axios';
 import './winch.css';
 
 const Winch = () => {
-  const {id} = useParams();
+    const {id} = useParams();
     const[Winch,setWinch] = useState([]);
     const [driverlicence, setDriverLicence] = useState('');
     const [winchaddress, setWinchAddress] = useState('');

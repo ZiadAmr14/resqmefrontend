@@ -13,6 +13,8 @@ import PendingReports from './PendingReports';
 import Car from './Car';
 import Cmc from './Cmc';
 import Winch from './Winch';
+import SparePart from './SparePart';
+import Report from './Report';
 const ReactRouterSetup = () => {
   return( 
     <Routes>
@@ -21,11 +23,12 @@ const ReactRouterSetup = () => {
       <Route path='/pendingcmcs' element={<PendingCMCs/>}/>
       <Route path='/pendingtowingcars' element={<PendingTowingCars/>}/>
       <Route path='/pendingspareparts' element={<PendingSpareParts/>}/>
-      <Route path='/pendingspareparts' element={<PendingSpareParts/>}/>
       <Route path='/pendingreports' element={<PendingReports/>}/>
       <Route path='/pendingcars/:id' element={<Car/>}/>
       <Route path='/pendingcmcs/:id' element={<Cmc/>}/>
       <Route path='/pendingtowingcars/:id' element={<Winch/>}/>
+      <Route path='/pendingspareparts/:id' element={<SparePart/>}/>
+      <Route path='/pendingreports/:id' element={<Report/>}/>
 
     </Routes>
     
