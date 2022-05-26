@@ -12,6 +12,7 @@ import PendingSpareParts from './PendingSpareParts';
 import PendingReports from './PendingReports';
 import Car from './Car';
 import Cmc from './Cmc';
+import Winch from './Winch';
 const ReactRouterSetup = () => {
   return( 
     <Routes>
@@ -24,6 +25,7 @@ const ReactRouterSetup = () => {
       <Route path='/pendingreports' element={<PendingReports/>}/>
       <Route path='/pendingcars/:id' element={<Car/>}/>
       <Route path='/pendingcmcs/:id' element={<Cmc/>}/>
+      <Route path='/pendingtowingcars/:id' element={<Winch/>}/>
 
     </Routes>
     
