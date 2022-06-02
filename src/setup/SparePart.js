@@ -101,7 +101,7 @@ const SparePart = () => {
               <td><select name='status' onChange={(e) =>setItemStatus(e.target.value)}>
                 <option value="Pending">Pending</option>
                 <option value="Approved">Approved</option>
-                <option value="Refused">Refuced</option>
+                <option value="Refused">Refused</option>
               </select></td>
             </tr> 
           </tbody>

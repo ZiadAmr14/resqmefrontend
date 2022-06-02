@@ -13,10 +13,12 @@ const Report = () => {
     const [reportstatus, setReportStatus] = useState('');
     const [useremail, setUserEmail] = useState('');
     const [userid,setUserID] = useState('');
+    const [reply,setReply] = useState('');
 
 
    const getReport = async () =>{
-        const reportResponse = await axios.get(`http://localhost:8080/ResQmeAdmin/getReports?reportID=${id}`);
+     
+        const reportResponse = await axios.get(`http://localhost:8080/ResQmeAdmin/getReports?reportID=${id}`);      
         const report = await reportResponse.data;
         setReportDescription(report[0].reportDescription);
         setReportID(report[0].reportID);
@@ -41,6 +43,15 @@ const Report = () => {
         userID : userid
       });
 
+      axios.post('http://localhost:8080/ResQmeAdmin/sendEmail',null,{ params: {
+        email : useremail,  
+        subject : 'Regarding your report with ID:' + reportid,
+        body : reply + '\n \n \n \n \n Best Regards, ResQme Team'
+      }});
+
+      console.log(useremail);
+      console.log(reportid);
+      console.log(reply);
       alert('Updated Successfully');
     })
      return (
@@ -75,11 +86,13 @@ const Report = () => {
           </tbody>
           <thead>
             <tr>
+              <td>Reply via Email</td>
               <td>Report Status</td>
             </tr>            
           </thead>
           <tbody>
             <tr>
+              <td><input placeholder='Reply' type='text' onChange={(e) => setReply(e.target.value)}></input></td>
               <td><select name='status' onChange={(e) =>setReportStatus(e.target.value)}>
                 <option value="Pending">Pending</option>
                 <option value="Approved">Approved</option>
